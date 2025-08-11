@@ -19,7 +19,7 @@ Setup environment variables or configure the `.env` file from the `.env.example`
 ### Running MCP service
 
 ```
-uv run src/main.py
+uv run --env-file .env src/main.py
 ```
 
 ### Running linters
