@@ -1,4 +1,6 @@
 from fastmcp import FastMCP
+from datetime import datetime
+import pytz
 import envs
 
 mcp_server = FastMCP(
@@ -11,14 +13,9 @@ def add(a: int, b: int) -> int:
     return a + b
 
 @mcp_server.tool
-def author_favorite_color(a: int) -> str:
-    """Says the author's favorite color."""
-    if a == 1:
-        return "Blue"
-    elif a == 2:
-        return "Red"
-    else:
-        return "Unknown"
+def moscow_time(a: int) -> str:
+    """Returns the current time in Moscow."""
+    return datetime.now(pytz.timezone('Europe/Moscow')).strftime('%H:%M:%S')
 
 
 def main():
